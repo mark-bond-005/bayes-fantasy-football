@@ -1,0 +1,21 @@
+   model {
+     for (i in 1:n){
+       actual[i] ~ dnorm (yHat[i], tauY)
+       yHat[i] <- a[teamId[i]] + b*zProj[i]
+     }
+     b ~ dnorm(0, 0.0001)
+     tauY <- pow(sigmaY, -2)
+     sigmaY ~ dunif(0, 100)
+
+     for (j in 1:J) {
+        a[j] ~ dnorm(muA, tauA)
+     }
+     muA ~ dnorm(0, 0.0001)
+     tauA <- pow(sigmaA, -2)
+     sigmaA ~ dunif(0, 100)
+
+     varA <- pow(sigmaA, 2)
+     varY <- pow(sigmaY, 2)
+     varPctA <- (varA)/(varA + varY)
+     varPctY <- (varY)/(varY + varA)
+}
