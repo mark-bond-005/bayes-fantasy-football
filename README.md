@@ -5,3 +5,5 @@ If you play fantasy football and also know nothing about football, all you can r
 So here is a fully Bayesian hierarchical linear models testing their efficacy. One uses the projections to predict the point spread, and a logistic analysis predicts winning the fantasy football game. Both of these analyses indicate ESPN's projections are terrible. 
 
 A write-up is attached, in case you are unfamiliar with fantasy football, hierarchical linear modeling, or both. 
+
+The raw data is also available, along with the code for the analysis. If you wish to replicate my analysis, you will need a copy of WinBUGS, which you can find here: https://www.mrc-bsu.cam.ac.uk/software/bugs/
